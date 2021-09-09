@@ -1,7 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import random
 
 def game_board(n, b):
@@ -9,7 +5,6 @@ def game_board(n, b):
     creates the minesweeper board size and place mines at random on the board 
     with neighbouring cells increasing their values to 1
     """
-    print("\n* Minesweeper *\n\nThe aim of the game is to dig up all cells\nwithout hitting the mines,\nGOOD LUCK!\n ")
     
     board = [[0 for row in range(n)] for column in range(n)]
 
@@ -54,7 +49,7 @@ def game_board(n, b):
 
 def player_board(n):
     """
-    player board to display whilst playing the game
+    player board to display whilst playing the game hiding the mines
     """
     board = [['-' for row in range(n)] for column in range(n)]
 
@@ -79,9 +74,17 @@ def continue_game(score):
         return False
     return True
 
+def welcome_message():
+    """
+    initial welcome message in the terminal
+    """
+    print("\n* Minesweeper *\n\nThe aim of the game is to dig up all cells\nwithout hitting the mines,\nGOOD LUCK!\n ")
+
 def play_game():
     status = True
     while status:
+        welcome_message()
+        
         difficulty = input("Select your difficulty (easy, normal, hard):")
         if difficulty.lower() == 'easy':
             n = 5
@@ -91,9 +94,7 @@ def play_game():
             b = 8
         elif difficulty.lower() == 'hard':
             n = 8
-            b = 20        
-        else:
-            print("Wrong input, please try again typing either: easy, normal or hard")
+            b = 20
 
         minesweeper_map = game_board(n, b)
         player_map = player_board(n)
@@ -125,7 +126,9 @@ def play_game():
                 break
 
 if __name__ == "__main__":
-    """identifies this file as the main module and runs the game"""
+    """
+    identifies this file as the main module and runs the game
+    """
     try:
         play_game()
     except KeyboardInterrupt:
