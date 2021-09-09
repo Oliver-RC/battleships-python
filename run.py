@@ -1,58 +1,58 @@
 import random
 
 
-def game_board(n, b):
+def game_board(board_size, number_of_bombs):
     """
     creates the minesweeper board size and place mines at random
     neighbouring cells increase values to represent how many bombs nearby
     """
-    board = [[0 for row in range(n)] for column in range(n)]
+    board = [[0 for row in range(board_size)] for column in range(board_size)]
 
-    for num in range(b):
-        x = random.randint(0, n - 1)
-        y = random.randint(0, n - 1)
+    for num in range(number_of_bombs):
+        x = random.randint(0, board_size - 1)
+        y = random.randint(0, board_size - 1)
         board[y][x] = '*'       # mine symbol
 
-        if (x >= 1 and x <= n - 1) and (y >= 0 and y <= n - 1):
+        if (x >= 1 and x <= board_size - 1) and (y >= 0 and y <= board_size - 1):
             if board[y][x - 1] != '*':
                 board[y][x - 1] += 1        # center left
 
-        if (x >= 0 and x <= n - 2) and (y >= 0 and y <= n - 1):
+        if (x >= 0 and x <= board_size - 2) and (y >= 0 and y <= board_size - 1):
             if board[y][x + 1] != '*':
                 board[y][x + 1] += 1        # center right
 
-        if (x >= 1 and x <= n - 1) and (y >= 1 and y <= n - 1):
+        if (x >= 1 and x <= board_size - 1) and (y >= 1 and y <= board_size - 1):
             if board[y - 1][x - 1] != '*':
                 board[y - 1][x - 1] += 1        # top left
 
-        if (x >= 0 and x <= n - 2) and (y >= 1 and y <= n - 1):
+        if (x >= 0 and x <= board_size - 2) and (y >= 1 and y <= board_size - 1):
             if board[y - 1][x + 1] != '*':
                 board[y - 1][x + 1] += 1        # top right
 
-        if (x >= 1 and x <= n - 1) and (y >= 0 and y <= n - 2):
+        if (x >= 1 and x <= board_size - 1) and (y >= 0 and y <= board_size - 2):
             if board[y + 1][x - 1] != '*':
                 board[y + 1][x - 1] += 1        # bottom left
 
-        if (x >= 0 and x <= n - 2) and (y >= 0 and y <= n - 2):
+        if (x >= 0 and x <= board_size - 2) and (y >= 0 and y <= board_size - 2):
             if board[y + 1][x + 1] != '*':
                 board[y + 1][x + 1] += 1        # bottom right
 
-        if (x >= 0 and x <= n - 1) and (y >= 1 and y <= n - 1):
+        if (x >= 0 and x <= board_size - 1) and (y >= 1 and y <= board_size - 1):
             if board[y - 1][x] != '*':
                 board[y - 1][x] += 1        # top center
 
-        if (x >= 0 and x <= n - 1) and (y >= 0 and y <= n - 2):
+        if (x >= 0 and x <= board_size - 1) and (y >= 0 and y <= board_size - 2):
             if board[y + 1][x] != '*':
                 board[y + 1][x] += 1        # bottom center
 
     return board
 
 
-def player_board(n):
+def player_board(board_size):
     """
     player board to display whilst playing the game hiding the mines
     """
-    board = [['-' for row in range(n)] for column in range(n)]
+    board = [['-' for row in range(board_size)] for column in range(board_size)]
 
     return board
 
@@ -68,7 +68,7 @@ def display_map(map):
 
 def check_win(map):
     """
-    check the map to either continue playing if the player has won
+    check the map to either continue playing or if the player has won
     """
     for row in map:
         for cell in row:
@@ -126,20 +126,20 @@ def play_game():
 
         difficulty = input("\nSelect your difficulty (easy, normal, hard):")
         if difficulty.lower().strip() == 'easy':
-            n = 5
-            b = 3
+            board_size = 5
+            number_of_bombs = 3
         elif difficulty.lower().strip() == 'normal':
-            n = 6
-            b = 8
+            board_size = 6
+            number_of_bombs = 8
         elif difficulty.lower().strip() == 'hard':
-            n = 8
-            b = 20
+            board_size = 8
+            number_of_bombs = 20
         else:
             print("\nPlease enter difficulty as either: easy, normal or hard")
             continue
 
-        minesweeper_map = game_board(n, b)
-        player_map = player_board(n)
+        minesweeper_map = game_board(board_size, number_of_bombs)
+        player_map = player_board(board_size)
         score = 0
 
         while True:
