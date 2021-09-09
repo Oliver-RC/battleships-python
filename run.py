@@ -83,7 +83,7 @@ def continue_game(score):
     """
     print("Your Score:", score)
     to_continue = input("Do you want to try again? (y/n) :")
-    if to_continue.lower() == 'n':
+    if to_continue.lower().strip() == 'n':
         print("Thanks for playing!")
         return False
     return True
@@ -106,9 +106,9 @@ def mine_instructions():
     if instructions == 'y':
         print("\n1. The aim of the game is to dig all locations without hitting a mine")
         print("2. If you hit a mine, you lose")
-        print("3. If you uncover all locations without hitting a mine, you win\n")
+        print("3. If you uncover all locations without hitting a mine, you win")
     elif instructions == 'n':
-        print("\nLets being...\n")
+        print("\nLets being...")
     else:
         print("\nSorry, I dont understand, please enter y (yes) or n (no)\n")
         mine_instructions()
@@ -124,18 +124,18 @@ def play_game():
     status = True
     while status:
 
-        difficulty = input("Select your difficulty (easy, normal, hard):")
-        if difficulty.lower() == 'easy':
+        difficulty = input("\nSelect your difficulty (easy, normal, hard):")
+        if difficulty.lower().strip() == 'easy':
             n = 5
             b = 3
-        elif difficulty.lower() == 'normal':
+        elif difficulty.lower().strip() == 'normal':
             n = 6
             b = 8
-        elif difficulty.lower() == 'hard':
+        elif difficulty.lower().strip() == 'hard':
             n = 8
             b = 20
         else:
-            print("Please enter difficulty as either: easy, normal or hard")
+            print("\nPlease enter difficulty as either: easy, normal or hard")
             continue
 
         minesweeper_map = game_board(n, b)
@@ -144,8 +144,8 @@ def play_game():
 
         while True:
             if check_win(player_map) is False:
-                print("Enter the location of your dig:")
-                x = input("Column (1 - 5):")
+                print("\nEnter the location of your dig:")
+                x = input("\nColumn (1 - 5):")
                 y = input("Row (1 - 5):")
                 x = int(x) - 1
                 y = int(y) - 1
