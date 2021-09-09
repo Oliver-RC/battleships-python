@@ -83,7 +83,7 @@ def continue_game(score):
     """
     print("Your Score:", score)
     to_continue = input("Do you want to try again? (y/n) :")
-    if to_continue == 'n':
+    if to_continue.lower() == 'n':
         print("Thanks for playing!")
         return False
     return True
@@ -98,11 +98,28 @@ def welcome_message():
     print("without hitting the mines,\nGOOD LUCK!\n ")
 
 
+def mine_instructions():
+    """
+    user option to display the rules of minesweeper
+    """
+    instructions = input("Would you like to know the rules for Minesweeper (y/n):")
+    if instructions == 'y':
+        print("\n1. The aim of the game is to dig all locations without hitting a mine")
+        print("2. If you hit a mine, you lose")
+        print("3. If you uncover all locations without hitting a mine, you win\n")
+    elif instructions == 'n':
+        print("\nLets being...\n")
+    else:
+        print("\nSorry, I dont understand, please enter y (yes) or n (no)\n")
+        mine_instructions()
+
+
 def play_game():
     """
     user to select the game difficulty and game logic
     """
     welcome_message()
+    mine_instructions()
     
     status = True
     while status:
