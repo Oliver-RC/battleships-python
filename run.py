@@ -103,11 +103,11 @@ def mine_instructions():
     user option to display the rules of minesweeper
     """
     instructions = input("Would you like to know the rules for Minesweeper (y/n):")
-    if instructions == 'y':
+    if instructions.lower().strip() == 'y':
         print("\n1. The aim of the game is to dig all locations without hitting a mine")
         print("2. If you hit a mine, you lose")
         print("3. If you uncover all locations without hitting a mine, you win")
-    elif instructions == 'n':
+    elif instructions.lower().strip() == 'n':
         print("\nLets being...")
     else:
         print("\nSorry, I dont understand, please enter y (yes) or n (no)\n")
