@@ -82,7 +82,7 @@ def continue_game(score):
     user can choose to exit the program or start another game
     """
     print("Your Score:", score)
-    to_continue = input("Do you want to try again? (y/n) :")
+    to_continue = input("Do you want to try again? (y/n):\n")
     if to_continue.lower().strip() == 'n':
         print("Thanks for playing!")
         return False
@@ -102,7 +102,7 @@ def mine_instructions():
     """
     user option to display the rules of minesweeper
     """
-    instructions = input("Would you like to know the rules for Minesweeper (y/n):")
+    instructions = input("Would you like to know the rules for Minesweeper (y/n):\n")
     if instructions.lower().strip() == 'y':
         print("\n1. The aim of the game is to dig all locations without hitting a mine")
         print("2. If you hit a mine, you lose")
@@ -120,11 +120,11 @@ def play_game():
     """
     welcome_message()
     mine_instructions()
-    
+
     status = True
     while status:
 
-        difficulty = input("\nSelect your difficulty (easy, normal, hard):")
+        difficulty = input("\nSelect your difficulty (easy, normal, hard):\n")
         if difficulty.lower().strip() == 'easy':
             board_size = 5
             number_of_bombs = 3
@@ -145,8 +145,8 @@ def play_game():
         while True:
             if check_win(player_map) is False:
                 print("\nEnter the location of your dig:")
-                x = int(input("\nColumn (1 - 5):")) - 1
-                y = int(input("Row (1 - 5):")) - 1
+                x = int(input("\nColumn (1 - 5):\n")) - 1
+                y = int(input("Row (1 - 5):\n")) - 1
 
                 if (x < 0 or y < 0 and x > 4 or y > 4):
                     print("Invalid number, it must be between 1 - 5, try again")
@@ -162,7 +162,7 @@ def play_game():
                     player_map[y][x] = minesweeper_map[y][x]
                     display_map(player_map)
                     score += 1
-            
+
             else:
                 display_map(player_map)
                 print("You Win!")
