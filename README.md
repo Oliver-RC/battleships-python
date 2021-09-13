@@ -9,7 +9,7 @@ Additional options / functionality are given the to user for a better experience
    2. to play again once the current game has finished,
    3. a tally of the score during the game.
 
-![Responsive Mockup](x)
+![Responsive Mockup](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/mock-up-design.JPG)
 
 ## Showcase
 
@@ -58,11 +58,13 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
  ### Option to Play Again
  - A
 
- ![Again](x)
+ ![Again1](x)
+ ![Again2](x)
  ### Input Validation
  - A
 
- ![Input](x)
+ ![Input1](x)
+ ![Input2](x) 
  ### Data
  - A
 
