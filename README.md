@@ -33,38 +33,45 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
 ## Current Features
 
  ### Introductory Message
- - A 
+ - A welcome message is displayed when the user first loads up the terminal. 
+ - This also acts as an aid to the user so they know the game has started and is working correctly.
 
- ![Intro](x)
+ ![Intro](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/intro.JPG)
  ### Rules Option
- - A
+ - If the user is unsure of how to play Minesweeper or needs a refresh on the rules, then the application has a built in function to display a basic set of rules.
+ - If the user does not need to see the rules then they can opt out to not show them.
 
- ![Rules](x)
+ ![Rules](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/rules.JPG)
  ### Level of Difficulty
- -  A
+ -  A mandatory option next is for the user to select the game level of difficulty: easy, normal, hard. This will generate the size of board and number of mines to randomly place.
+ - Built into the application is user input validation so that if an error is made on input, then it will display a message for the user to retype the correct difficulty.
 
- ![Difficulty](x)
+ ![Difficulty](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/difficulty.JPG)
  ### Minesweeper Board
- - The minesweeper board is displayed whereby the user can not see where the mines have been placed.
- - The mines have been placed at random across the board.
- - Depending on the difficulty selected by the user will depend on the board size and number of mines.
+ - Once the first location has been entered by the user, the minesweeper board displayed hides the randomly placed mines.
+ - The mines have been placed at random across the board using the the import random python package.
+ - Depending on the difficulty selected by the user, will depend on the board size and number of mines.
  - The application accepts user input for selecting the column and row to dig. Upon input, the location is revealed with either a mine or a number representing how many mines are next to the dug location.
 
- ![Board](x)
+ ![Board](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/board.JPG)
  ### End of the Game with Score Tally
- - At the end of the game a score tally is shown to the user advising them how many locations were dug up before the game finished.
+ - If either a mine is hit or the user clears all locations, this marks the end of the game. At which point a score tally is shown to the user advising them of how many successful locations were dug up during the game.
 
- ![End](x)
+ ![End](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/end.JPG)
  ### Option to Play Again
- - A
+ - Once the game has finished, the user is presented with an option to either play again or exit the application.
+ - If y is entered then the game will start again with the level of difficulty displayed.
+ - If n is entered then then the user is left with a 'thanks for playing' message.
 
- ![Again1](x)
- ![Again2](x)
+ ![Again1](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/again.JPG)
+ ![Again2](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/again-2.JPG)
  ### Input Validation
- - A
+ - Built into the application are a number of input validation functions in order to keep the game running smoothly when errors are entered.
+ - When entering the column and row for digging a location is will adivse the dig needs to be between 1 - 5 on an easy board.
+ - Whe selecting the game difficulty level, if spelling is not correct a message will appear asking for the correct input again.
 
- ![Input1](x)
- ![Input2](x) 
+ ![Input1](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/validation1.JPG)
+ ![Input2](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/validation2.JPG) 
  ### Data
  - A
 
@@ -84,16 +91,18 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
   - Heroku: used for deploying and hosting the application.
 
 ## Testing
- - I tested the application 
+ - I tested the application on both the Gitpod terminal and Heroku hosting terminal, the game played as expected.
+ - I tested all featured as advised above making sure they work as intended.
+ - I passed the code through the PEP8 validation and can confirm there are no problems or serious errors.
  ### Validator Testing
   #### PEP8 - 
    - All Python validation was passed through the official [PEP8 validator](http://pep8online.com/).
    - xxx
    ![PEP8](x)
  ### User Stories Testing
-  - First time user 
-  - Returning user 
-  - Frequent user 
+  - First time user understands how to access the application and how to play the game. A simple to follow dialogue and game structure allows the user to easily understand how to work the application and knows when the game has finished.
+  - Returning user is able to pick up from where they left off by quickly understanding how the simple game works and functions. With the built in difficulty selector allows the user to be tested further and provides longer game playing time.
+  - Frequent user finds it quick and easy to come back and play the game. The levels of difficulty and score tally keeps the user engaged and enables them to challenge themselves to beat their previous score.
 
 ## Bugs
  ### Solved Bugs
