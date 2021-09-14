@@ -86,6 +86,10 @@ def continue_game(score):
     if to_continue.lower().strip() == 'n':
         print("Thanks for playing!")
         return False
+    if to_continue.lower().strip() == 'y':
+        print("Let's play again...")
+    else:
+        print("Please enter either y to play another game or n to end the application")
     return True
 
 
@@ -145,8 +149,11 @@ def play_game():
         while True:
             if check_win(player_map) is False:
                 print("\nEnter the location of your dig:")
-                x = int(input("\nColumn:\n")) - 1
-                y = int(input("Row:\n")) - 1
+                try:
+                    x = int(input("\nColumn:\n")) - 1
+                    y = int(input("Row:\n")) - 1
+                except ValueError:
+                    print("This is not a valid location, try again")
 
                 if (x < 0 or y < 0 and x >= board_size or y >= board_size):
                     print("Invalid location, try again")
