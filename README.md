@@ -5,9 +5,9 @@ Minesweeper - Python is based on the classic single player minesweeper video gam
 My version is a terminal only created game using just the computing language of Python. It is a single player game whereby the user selects the difficulty (size of the board and number of mines) and is asked each round for a column and row location. If a mine is avoided, then the game continues until either all locations have been cleared (win) or a mine is hit (lose).
 
 Additional options / functionality are given the to user for a better experience:
-   1. option to see the rules of the game,
-   2. to play again once the current game has finished,
-   3. a tally of the score during the game.
+   1. Option to see the rules of the game,
+   2. To play again once the current game has finished,
+   3. A tally of the score during the game.
 
 ![Responsive Mockup](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/mock-up-design.JPG)
 

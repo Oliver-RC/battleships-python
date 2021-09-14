@@ -145,11 +145,11 @@ def play_game():
         while True:
             if check_win(player_map) is False:
                 print("\nEnter the location of your dig:")
-                x = int(input("\nColumn (1 - 5):\n")) - 1
-                y = int(input("Row (1 - 5):\n")) - 1
+                x = int(input("\nColumn:\n")) - 1
+                y = int(input("Row:\n")) - 1
 
-                if (x < 0 or y < 0 and x > 4 or y > 4):
-                    print("Invalid number, it must be between 1 - 5, try again")
+                if (x < 0 or y < 0 and x >= board_size or y >= board_size):
+                    print("Invalid location, try again")
                     continue
 
                 if (minesweeper_map[y][x] == '*'):
