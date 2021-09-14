@@ -73,12 +73,15 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
  ![Input1](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/validation1.JPG)
  ![Input2](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/validation2.JPG) 
  ### Data
- - A
+ - The game data is kept within the terminal so the user can see their minesweeper progression throughout the game.
+ - As the game progresses, the score continues to tally up with the number of locations dug.
 
  ![Data](x)
  
 ## Future Features
- - 
+ - Allow the use of flags for the user to denote where a potential mine is located.
+ - Include a total score tally with user ID which generates a leaderboard and timestamp.
+ - Introduce an expert level for further difficulty.
 
 ## Technologies Used
 
@@ -97,8 +100,8 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
  ### Validator Testing
   #### PEP8 - 
    - All Python validation was passed through the official [PEP8 validator](http://pep8online.com/).
-   - xxx
-   ![PEP8](x)
+   - Eight lines of code were longer than the 80 character limit therefore this was amended to produce no errors.
+   ![PEP8](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/pep8.JPG)
  ### User Stories Testing
   - First time user understands how to access the application and how to play the game. A simple to follow dialogue and game structure allows the user to easily understand how to work the application and knows when the game has finished.
   - Returning user is able to pick up from where they left off by quickly understanding how the simple game works and functions. With the built in difficulty selector allows the user to be tested further and provides longer game playing time.
