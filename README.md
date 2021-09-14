@@ -67,7 +67,7 @@ A deployed link to my project can be found [here](https://minesweeper-python.her
  ![Again2](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/again-2.JPG)
  ### Input Validation
  - Built into the application are a number of input validation functions in order to keep the game running smoothly when errors are entered.
- - When entering the column and row for digging a location is will adivse the dig needs to be between 1 - 5 on an easy board.
+ - When entering the column and row for digging a location, it will adivse if the dig is not on the board i.e between 1 - 5 on an easy board.
  - Whe selecting the game difficulty level, if spelling is not correct a message will appear asking for the correct input again.
 
  ![Input1](https://github.com/Oliver-RC/minesweeper-python/blob/main/readme-content/validation1.JPG)
