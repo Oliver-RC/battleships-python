@@ -1,58 +1,58 @@
 import random
 
 
-def game_board(board_size, number_of_bombs):
+def game_board(size, number_of_bombs):
     """
     creates the minesweeper board size and place mines at random
     neighbouring cells increase values to represent how many bombs nearby
     """
-    board = [[0 for row in range(board_size)] for column in range(board_size)]
+    board = [[0 for row in range(size)] for column in range(size)]
 
     for num in range(number_of_bombs):
-        x = random.randint(0, board_size - 1)
-        y = random.randint(0, board_size - 1)
+        x = random.randint(0, size - 1)
+        y = random.randint(0, size - 1)
         board[y][x] = '*'       # mine symbol
 
-        if (x >= 1 and x <= board_size - 1) and (y >= 0 and y <= board_size - 1):
+        if (x >= 1 and x <= size - 1) and (y >= 0 and y <= size - 1):
             if board[y][x - 1] != '*':
                 board[y][x - 1] += 1        # center left
 
-        if (x >= 0 and x <= board_size - 2) and (y >= 0 and y <= board_size - 1):
+        if (x >= 0 and x <= size - 2) and (y >= 0 and y <= size - 1):
             if board[y][x + 1] != '*':
                 board[y][x + 1] += 1        # center right
 
-        if (x >= 1 and x <= board_size - 1) and (y >= 1 and y <= board_size - 1):
+        if (x >= 1 and x <= size - 1) and (y >= 1 and y <= size - 1):
             if board[y - 1][x - 1] != '*':
                 board[y - 1][x - 1] += 1        # top left
 
-        if (x >= 0 and x <= board_size - 2) and (y >= 1 and y <= board_size - 1):
+        if (x >= 0 and x <= size - 2) and (y >= 1 and y <= size - 1):
             if board[y - 1][x + 1] != '*':
                 board[y - 1][x + 1] += 1        # top right
 
-        if (x >= 1 and x <= board_size - 1) and (y >= 0 and y <= board_size - 2):
+        if (x >= 1 and x <= size - 1) and (y >= 0 and y <= size - 2):
             if board[y + 1][x - 1] != '*':
                 board[y + 1][x - 1] += 1        # bottom left
 
-        if (x >= 0 and x <= board_size - 2) and (y >= 0 and y <= board_size - 2):
+        if (x >= 0 and x <= size - 2) and (y >= 0 and y <= size - 2):
             if board[y + 1][x + 1] != '*':
                 board[y + 1][x + 1] += 1        # bottom right
 
-        if (x >= 0 and x <= board_size - 1) and (y >= 1 and y <= board_size - 1):
+        if (x >= 0 and x <= size - 1) and (y >= 1 and y <= size - 1):
             if board[y - 1][x] != '*':
                 board[y - 1][x] += 1        # top center
 
-        if (x >= 0 and x <= board_size - 1) and (y >= 0 and y <= board_size - 2):
+        if (x >= 0 and x <= size - 1) and (y >= 0 and y <= size - 2):
             if board[y + 1][x] != '*':
                 board[y + 1][x] += 1        # bottom center
 
     return board
 
 
-def player_board(board_size):
+def player_board(size):
     """
     player board to display whilst playing the game hiding the mines
     """
-    board = [['-' for row in range(board_size)] for column in range(board_size)]
+    board = [['-' for row in range(size)] for column in range(size)]
 
     return board
 
@@ -89,7 +89,7 @@ def continue_game(score):
     if to_continue.lower().strip() == 'y':
         print("Let's play again...")
     else:
-        print("Please enter either y to play another game or n to end the application")
+        print("Please enter either y or n")
     return True
 
 
@@ -106,11 +106,11 @@ def mine_instructions():
     """
     user option to display the rules of minesweeper
     """
-    instructions = input("Would you like to know the rules for Minesweeper (y/n):\n")
+    instructions = input("Would you like to know the rules (y/n):\n")
     if instructions.lower().strip() == 'y':
-        print("\n1. The aim of the game is to dig all locations without hitting a mine")
-        print("2. If you hit a mine, you lose")
-        print("3. If you uncover all locations without hitting a mine, you win")
+        print("\n1.Aim of the game to dig all spaces without hitting a mine")
+        print("2.If you hit a mine, you lose")
+        print("3.If you uncover all locations without hitting a mine, you win")
     elif instructions.lower().strip() == 'n':
         print("\nLets being...")
     else:
@@ -130,20 +130,20 @@ def play_game():
 
         difficulty = input("\nSelect your difficulty (easy, normal, hard):\n")
         if difficulty.lower().strip() == 'easy':
-            board_size = 5
+            size = 5
             number_of_bombs = 3
         elif difficulty.lower().strip() == 'normal':
-            board_size = 6
+            size = 6
             number_of_bombs = 8
         elif difficulty.lower().strip() == 'hard':
-            board_size = 8
+            size = 8
             number_of_bombs = 20
         else:
             print("\nPlease enter difficulty as either: easy, normal or hard")
             continue
 
-        minesweeper_map = game_board(board_size, number_of_bombs)
-        player_map = player_board(board_size)
+        minesweeper_map = game_board(size, number_of_bombs)
+        player_map = player_board(size)
         score = 0
 
         while True:
@@ -155,7 +155,7 @@ def play_game():
                 except ValueError:
                     print("This is not a valid location, try again")
 
-                if (x < 0 or y < 0 and x >= board_size or y >= board_size):
+                if (x < 0 or y < 0 and x >= size or y >= size):
                     print("Invalid location, try again")
                     continue
 
